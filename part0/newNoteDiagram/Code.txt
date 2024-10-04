@@ -1,0 +1,13 @@
+sequenceDiagram
+    Browser->>+Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    Server->>+Browser: HTML document (302) redirecting to https://studies.cs.helsinki.fi/exampleapp/notes
+    Browser->>+Server: GET //studies.cs.helsinki.fi/exampleapp/notes
+    Server->>+Browser: HTML document (200 OK) 
+    Browser->>+Server: Get https://studies.cs.helsinki.fi/exampleapp/main.css
+    Server->>+Browser: CSS file (200 OK)
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    Server->>+Browser: JavaScript file (200 OK)
+    Note over Server, Browser: The browser excecutes the JavaScript in the JS file (main.js)
+    Browser->>+Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    Server->>+Browser: JSON file (200 OK)
+    Note over Browser, Server: The browser executes the callback function that renders the notes

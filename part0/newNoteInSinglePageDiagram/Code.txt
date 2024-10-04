@@ -1,0 +1,4 @@
+sequenceDiagram
+    Browser->>+Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note over Browser, Server: the JavaScript code prevents the browser from sending GET request using "e.preventdefault"
+    Server->>+Browser: 201 Created
